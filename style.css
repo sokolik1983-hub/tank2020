@@ -1,0 +1,197 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.game-zone {
+    transition: 3s;
+    position: relative;
+    background: black;
+    height: 100vh;
+}
+.start-screen {
+    transition: 3s;
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.start-screen .title {
+    -webkit-text-stroke: 1px #fff;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    letter-spacing: 10px;
+    font-weight: bold;
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.start-screen .options-block {
+    -webkit-text-stroke: 1px red;
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: .3s;
+}
+.start-screen .options-block:hover {
+    -webkit-text-stroke: 1px #fff;
+    color: red;
+}
+.active {
+
+    background: #232323;
+    opacity: 1;
+}
+.tank {
+    position: absolute;
+    width: 112px;
+    height: 112px;
+    background: url("images/tank-top.png") center/cover;
+    background-repeat: no-repeat;
+}
+.bullet {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: url("images/bullet.png") center/cover;
+    background-repeat: no-repeat ;
+}
+.enemy {
+    position: absolute;
+
+
+    background: url("images/enemy-right.png") center/cover;
+    background-repeat: no-repeat ;
+}
+.explosion {
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    background: url("images/explosion.png") center/cover ;
+    background-repeat: no-repeat ;
+}
+.count-box, .count-text {
+    -webkit-text-stroke: 1px red;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 5px;
+    padding: 20px;
+}
+.count-text {
+
+    right: 75px;
+    bottom: 15px;
+    font-size: 25px;
+    font-weight: normal;
+}
+.life__img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.gameOver {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease;
+
+}
+.gameOver.on {
+    display: block;
+    opacity: .8;
+    visibility: visible;
+    transition: .5s ease;
+    z-index: 100;
+}
+.gameOver__p {
+    font-family: Montserrat, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 102;
+    font-size: 60px;
+    line-height: 75px;
+    color: red;
+    font-weight: bold;
+    transition: .3s;
+}
+.gameOver__link {
+    text-decoration: none;
+    font-family: Montserrat, sans-serif;
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 102;
+    border-bottom: 3px solid red;
+}
+.gameOver__link.active1 {
+    border-bottom: 3px solid #fff;
+}
+.gameOver__link {
+    padding-top: 60px;
+}
+.title__desc {
+    color: #fff;
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 102;
+    font-weight: 400;
+}
+.controls-box {
+    font-family: Montserrat, sans-serif;
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    transform: translate(-50%,-50%);
+    z-index: 102;
+}
+.title__desc.active {
+    color: red;
+}
+.controls-box {
+    text-align: center;
+}
+.controls-box__img {
+    width: 100px;
+    padding-right: 20px;
+}
+.controls-text {
+    color: #fff;
+    font-size: 22px;
+    margin: 0;
+}
+.controls-box__wrap {
+    display: flex;
+    align-items: center;
+}

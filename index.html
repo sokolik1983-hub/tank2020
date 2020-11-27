@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TANKS 2020</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="game-zone">
+<div class="start-screen">
+    <div class="title">TANKS 2020</div>
+    <div class="options-block">Start</div>
+    <p class="title__desc">"Click or Enter"</p>
+    <div class="controls-box">
+        <p class="controls-text">Controls:</p>
+            <div class="controls-box__wrap">
+                <img class="controls-box__img" src=".\images\space.png" alt="button">
+                <img class="controls-box__img" src=".\images\keyboard_arrows.png" alt="button">
+            </div>
+    </div>
+</div>
+
+
+
+<div class="gameOver">
+    <p class="gameOver__p">GAME OVER</p>
+    <a href="#" onclick="restartGame()" class="gameOver__link">RESTART GAME</a>
+
+</div>
+
+<div class="life"></div>
+<span class="count-text">Kills:</span><div class="count-box"> 0</div>
+
+
+
+<script src="js.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let startScreen = document.querySelector('.start-screen');
+        startScreen.classList.add('active');
+        let startBtn = document.querySelector('.options-block');
+
+
+
+        function startGame() {
+            startScreen.classList.remove('active');
+            go.play();
+            let gameZone = document.querySelector('.game-zone');
+            gameZone.style.background = 'url("images/earth.png")';
+            setTimeout(()=>{
+                startScreen.remove();
+                game();
+            }, 1000);
+        }
+        startBtn.addEventListener('click' , () => {
+            startGame()
+        });
+        document.addEventListener('keydown', (e) => {
+            if(event.code === 'Enter') {
+                startGame();
+            }
+        })
+
+    });
+
+    function blinkText() {
+      let titleDesc = document.querySelector('.title__desc');
+      if(titleDesc) {
+          titleDesc.classList.toggle('active');
+      }
+        let gameoverLink = document.querySelector('.gameOver__link');
+        if(gameoverLink) {
+            gameoverLink.classList.toggle('active1');
+        }
+    }
+    setInterval(blinkText, 500);
+</script>
+</body>
+</html>
